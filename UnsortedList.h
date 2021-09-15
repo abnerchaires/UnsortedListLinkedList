@@ -1,6 +1,8 @@
 #ifndef UNSORTEDLIST_H
 #define UNSORTEDLIST_H
 
+const int MAX_ITEMS = 5;
+
 template<class T>
 class UnsortedList
 {
@@ -56,6 +58,14 @@ public:
 
 private:
   int length;
+
+  struct Node {
+      T info;
+      Node* next;
+  };
+
+  Node* head;
+  Node* currentPos;     // Used for the iterator.
 
   // Need to create the head... and a node definition
   // Also need something to track the iterator position
